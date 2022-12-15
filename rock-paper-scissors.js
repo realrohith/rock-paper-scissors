@@ -25,23 +25,39 @@ function playRound(playerSelection, computerSelection) {
     return output;
 }
 
-function game() {
-    let winner = new Array(5);
-    for (let i = 0; i < 5; i++) {
-        console.log(`round ${i + 1} result:`);
-        // const playerSelection = prompt(`Please enter your choice for round ${i + 1}`);
-        const playerSelection = "rock";
+function UpdateUI(result) {
+    const manScore = document.querySelector('#man-score');
+    const computerScore = document.querySelector('#computer-score');
+    if (result.includes('win')) ++manScore.textContent;
+    else if (result.includes('lose')) ++computerScore.textContent;
 
-        let result = playRound(playerSelection, getComputerChoice());
-        console.log(result);
-        winner[i] = result.includes("win") ? "player" :
-            result.includes("lose") ? "computer" :
-                "draw";
+    if (manScore.textContent == 5 || computerScore.textContent == 5) {
+        const winner = document.querySelector('#winner');
+        const score = document.querySelector('.score');
+        score.style.display = 'none';
+        winner.style.fontSize = '180%';
+        if (manScore.textContent == 5) {
+            winner.textContent = "You have saved humanity! You are our savior!";
+        }
+        else if (computerScore.textContent == 5) {
+            winner.textContent = "No surprise. You have doomed humanity! And so the rise of robots begins!";
+        }
+        return 1;
     }
-    winner = (winner.filter(x => x == "player").length == winner.filter(x => x == "computer").length) ? "Draw" :
-        (winner.filter(x => x == "player").length > winner.filter(x => x == "computer").length) ? "You" :
-            "Computer";
-    console.log(`Final winner: ${winner}!`);
+    return 0;
 }
 
-game();
+function OneRound() {
+    let playerSelection = this.id;
+    let result = playRound(playerSelection, getComputerChoice());
+    UpdateUI(result);
+}
+const btns = document.querySelectorAll('button');
+
+btns.forEach(button => button.addEventListener('click', OneRound));
+btns.forEach(button => button.addEventListener('mouseenter', () => {
+    button.classList.add('hover');
+}));
+btns.forEach(button => button.addEventListener('mouseleave', () => {
+    button.classList.remove('hover');
+}));

@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Creepster);
+
+body {
+    font-family: "Creepster";
+    font-size: 180%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10vw;
+    margin: 16px 0px;
+}
+
+h1, #winner {
+    color: white;
+    margin: 16px 0px;
+}
+
+.hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 50px blue;
+}
+
+button {
+    height: 128px;
+    width: 128px;
+}
+
+#rock {
+    background: url(./images/rock.png);
+    background-color: yellowgreen;
+}
+
+#paper {
+    background: url(./images/paper.png);
+    background-color: violet;
+}
+
+#scissors {
+    background: url(./images/scissors.png);
+    background-color: pink;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score {
+    display: flex;
+    gap: 20%;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

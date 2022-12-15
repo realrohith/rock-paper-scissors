@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
-    <title>My First Webpage</title>
+    <title>My Game</title>
+    <link href="./stylesheet.css" rel="stylesheet" />
+    <link rel = "stylesheet" href = "https://fonts.google.com/download?family=Creepster">
+    <script src="rock-paper-scissors.js" defer></script>
 </head>
 
 <body>
-    <script src="rock-paper-scissors.js"></script>
+    <h1 class="heading">Rock Paper Scissors - Humanity's last hope</h1>
+    <h1>Man vs Computer</h1>
+    <div class="buttons">
+        <button id="rock"></button>
+        <button id="paper"></button>
+        <button id="scissors"></button>
+    </div>
+    <div class="results">
+        <h1 class="heading">Results</h1>
+        <div class="score">
+            <div class="modal">
+                <h1>Man</h1>
+                <h1 id="man-score">0</h1>
+            </div>
+            <div class="modal">
+                <h1>Computer</h1>
+                <h1 id="computer-score">0</h1>
+            </div>
+        </div>
+    </div>
+    <p id="winner"></p>
 </body>
+
 </html>
