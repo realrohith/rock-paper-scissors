@@ -18,7 +18,8 @@ body {
     margin: 16px 0px;
 }
 
-h1, #winner {
+h1,
+#winner {
     color: white;
     margin: 16px 0px;
 }
@@ -31,6 +32,7 @@ h1, #winner {
 button {
     height: 128px;
     width: 128px;
+    border-color: red;
 }
 
 #rock {
